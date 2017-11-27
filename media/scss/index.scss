@@ -1,3 +1,36 @@
-.body_image {
-    
+.landing {
+    padding-top: 5vh;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    height: 100vh;
+    * {
+        color: white;
+    }
+    img {
+        width: 25vw;
+    }
+    h1 {
+        font-size: 6em;
+        margin-top: 0.3em;
+    }
+    i {
+        font-size: 370%;
+        text-shadow: 3px 5px 13px rgba(0,0,0,0.26);
+        margin: 0;
+        padding-top: 8vh;
+    }
+    .animated { 
+         animation-duration: 1s; 
+         animation-fill-mode: both; 
+         animation-iteration-count: 2;
+    } 
+    @keyframes pulse { 
+        0% { transform: scale(1); } 
+        50% { transform: scale(1.1); } 
+        100% { transform: scale(1); } 
+    } 
+    .pulse { 
+        animation-name: pulse; 
+    }
 }
