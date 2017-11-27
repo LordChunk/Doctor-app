@@ -1,0 +1,62 @@
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+	<script src="/media/js/css.js"></script>
+	<script async src="/media/js/main.js"></script>
+	<title>P12 OIM</title>
+</head>
+<body>
+<header>
+    <nav id="nav">
+        <!-- Mobile nav -->
+        <div class="mobile" id="mobile-nav">
+            <!--Hidden mobile nav -->
+            <ul id="side-nav">
+                <!-- Home button -->
+                <li><a href="/">Home</a></li>
+    
+                <?php
+                foreach ($nav as $link => $tekst)
+                {?>
+                    <li>
+                        <a href="<?=$link?>">
+                            <?=$tekst?>
+                        </a>
+                    </li>
+                    <?php
+                }
+                ?>
+    
+                <!-- Close nav button -->
+                <li>
+                    <a id="close_mobile_nav" class="nav_trigger">
+                        <i class="material-icons">close</i>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <!--desktop nav -->
+        <div class="desktop-nav">
+            <ul>
+                <li class="left" id="title">
+                    <a id="open_mobile_nav">
+                        <?=$title?>
+                        <i class="material-icons mobile">menu</i>
+                    </a>
+                </li>
+                <!--Normal nav bar -->
+                <?php
+                foreach ($nav as $link => $tekst)
+                {?>
+                    <li class="desktop">
+                        <a href="<?=$link; ?>"><?=$tekst ?></a>
+                    </li>
+                    <?php
+                }
+                ?>
+            </ul>
+        </div>
+    </nav>
+</header>

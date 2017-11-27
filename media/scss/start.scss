@@ -1,0 +1,6 @@
+//First CSS that is loaded in. Should be a small document that is loaded quickly
+
+//Prevent random text without styling from popping up
+* {
+    opacity: 0;
+}

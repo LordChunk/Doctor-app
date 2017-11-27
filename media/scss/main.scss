@@ -1,0 +1,400 @@
+//Import colour pallets
+@import "colour";
+//Revert temporary CSS from start.css
+* {
+  opacity: 1;
+}
+main {
+  animation: fadein 2s;
+}
+
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to   {
+    opacity: 1;
+  }
+}
+
+//Start main.css
+* {
+  font-family: 'Open Sans', sans-serif;  
+  outline: none; //Prevent button outlines etc.
+}
+//Setup correct font-weights for elements
+p, a {
+  font-weight: 300;
+}
+h1, h2, h3, h4, h5, h6, th, b {
+  font-weight: 500;
+}
+.font_weight_normal {
+  font-weight: 400;
+}
+img {
+  width: 100%;
+  height: auto;
+}
+//Setup backgrounds and background failover
+body {
+  background-color: $background-color;
+  margin: 0;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: $text_colour;
+
+  //Display footer at bottom of page
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+/*Make links look nice*/
+a {
+  text-decoration: none;
+  color: $link_colour;
+  /*For JS and Jquery links */
+  cursor: pointer;
+}
+//Give elements in links the same colour as the link
+a i {
+  color: $link_colour;
+}
+main {
+  //Footer at bottom of page scaling
+  flex: 1 0 auto;
+}
+//Containers are used as a wrapper for all the main elements on the page
+.container {
+  //Display grid setup
+  //https://css-tricks.com/difference-explicit-implicit-grids/
+
+  ////Edge and explorer support ftw
+  ////Edge doesn't work atm cause it's very finicky and isn't a top priority
+  //display: -ms-grid;
+  //
+  //
+  //-ms-grid-columns: auto 340px;
+  //-ms-grid-rows: 50px 5em auto;
+
+  display: grid;
+  //Generate columns for every item
+  grid-template-columns: repeat(auto-fit, 340px);
+  grid-gap: 8%;
+
+  width: 70%;
+  //Center elements
+  margin: 0 auto;
+  //Set space between elements and nav
+  margin-top: 20px;
+  max-width: 1280px;
+  justify-content: center;
+}
+//Use flexbox for mobile navigation
+@media (max-width: 800px) {
+  .container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}
+/*make sure container elements stay in the center of the page */
+#logo {
+  height: 1em;
+  width: auto;
+}
+
+nav {
+  //Shadow for nav bar
+  -webkit-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14);
+  -moz-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14);
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14);
+  //Remove link and icon colour on nav bar
+  * {
+	color: white;
+    font-weight: 400;
+  }
+  i {
+    color: inherit;
+  }
+}
+/*Set google icons to have the same size as the text they're used with*/
+.material-icons {
+  font-size: initial;
+}
+/*Navigation bar */
+.desktop-nav{
+  ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	background-color: $nav_colour;
+  }
+  li {
+	float: right;
+	line-height: 1.5;
+	vertical-align: middle;
+  }
+
+  /*Vertically align Google logos*/
+  li i {
+	float: left;
+	margin-right: 5px;
+	line-height: 1.5;
+	vertical-align: middle;
+  }
+  a {
+	display: block;
+	text-align: center;
+	padding: 14px 15px;
+	text-decoration: none;
+	/* Hover animation */
+	transition: background-color .3s;
+	transition-property: background-color;
+	transition-duration: 0.3s;
+  }
+  a:hover {
+	background-color: $nav_colour_focus;
+  }
+  .left {
+	float: left;
+  }
+}
+//Stop desktop-nav
+#title {
+  user-select: none;
+}
+#title a:hover {
+  background-color: $nav_colour_focus;
+}
+
+/*Mobile nav */
+#side-nav {
+  top: -100000vh; //This is now handled using js (see main.js)
+}
+
+#mobile-nav {
+  ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	background-color: $nav_colour;
+	width: 25vw;
+	/*rens' shit*/
+	position: absolute;
+	min-width: 279.719px;
+  }
+  li a {
+	display: block;
+	padding: 16.5px 15px;
+	/* Hover animation */
+	transition: background-color .3s;
+	transition-property: background-color;
+	transition-duration: 0.3s;
+  }
+  a:hover {
+	background-color: $nav_colour_focus;
+  }
+}
+//Make close icon stand out more
+#close_mobile_nav {
+  text-align: right;
+}
+/*Hide mobile nav button on desktop*/
+.mobile {
+  display: none;
+}
+/*Mobile nav stuff*/
+@media (max-width: 800px) {
+  .mobile {
+	display: block;
+  }
+  .desktop {
+	display: none;
+  }
+  #title a:hover {
+	background-color: $nav_colour_focus;
+  }
+  #title {
+	min-width: 279.719px;
+  }
+  //Make blocks take up more space on mobile
+  .container {
+	width: 90%;
+  }
+}
+/*Style from items*/
+.form_div {
+  border-radius: 3px;
+  width: 300px;
+  max-width: 70vw;
+
+  //set whitespace for form elements
+  form > * {
+	margin-top: 16px;
+  }
+
+  //Make radio buttons more clickable by replacing the margin with padding (makes whitespace clickable)
+  form > label {
+    margin-top: 0;
+    padding: 8px 0;
+  }
+
+  input:not([type=radio]), textarea {
+	width: 80%;
+    //For some reason inputs and % don't scale too well so I added a max-width which stops it right at the width for a standard .block width (including padding etc.)
+    max-width: 260px;
+    padding: 12px 20px;
+	border: 0;
+	border-bottom: 2px solid rgba(117, 117, 117, 0.5);
+	transition: border-bottom 0.2s;
+  }
+  //Only radio buttons use labels so far (this puts the label text inline with the radio buttons)
+  label {
+    display: block;
+  }
+  //Prevent text areas from resizing form divs
+  textarea {
+    resize: vertical;
+  }
+  input[type=time]{
+    width: auto; //Prevent time inputs from being too big
+  }
+  /*input interaction animations*/
+  input:focus, textarea:focus {
+	border: 0;
+	border-bottom: 2px solid $accent_colour_focus;
+	outline: none;
+  }
+
+  form {
+	width: auto;
+	height: auto;
+  }
+
+  .input-field {
+	width: 90%;
+  }
+
+  /*Custom styling for form header*/
+  .form_header {
+	margin: 0;
+	font-size: x-large;
+	font-weight: normal;
+  }
+}
+//Moved form buttons outside form div class so their styling can be used by other objects as well
+/*Make icon and text same size */
+.input-confirm * {
+  font-size: 1em;
+  color: white;
+  padding: 0 10px;
+}
+
+.input-confirm i {
+  line-height: 1;
+  vertical-align: middle;
+  margin: 0;
+}
+
+.input-confirm {
+  height: 40px;
+  min-width: fit-content;
+  cursor: pointer;
+  background: $accent_colour;
+  border: 0;
+  border-radius: 2px;
+  -webkit-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14);
+  -moz-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14);
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14);
+  /*hover animation */
+  transition: box-shadow, -moz-box-shadow, -webkit-box-shadow, background 0.2s;
+  transition-duration: 0.3s;
+}
+
+.input-confirm:hover {
+  background: $accent_colour_focus;
+  -webkit-box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.3);
+  box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.3);
+}
+
+
+/*Error handling css*/
+#button_error {
+  width: auto;
+  display: flex; 
+  align-items: center;
+}
+.error_message {
+  width: auto;
+  color: red;
+  margin-left: 30px;
+}
+.success {
+  color: black;
+}
+.block {
+  border-radius: 3px;
+  background-color: $block_colour;
+  width: auto;
+  min-width: 300px;
+  max-width: 70vw;
+  padding: 20px;
+  /* Space between items */
+  //margin-right: 30px;
+  margin-bottom: 30px;
+
+  //Shadow for boxes
+  transition: box-shadow, -moz-box-shadow, -webkit-box-shadow, background 0.2s;
+  transition-duration: 0.3s;
+  //Default shadows
+  -webkit-box-shadow: 6px 6px 20px 0px rgba(50, 50, 50, 0.23);
+  -moz-box-shadow:    6px 6px 20px 0px rgba(50, 50, 50, 0.23);
+  box-shadow:         6px 6px 20px 0px rgba(50, 50, 50, 0.23);
+
+  //Removes additional standard element top margin for elements like headers etc.
+  :first-child, :first-child * {
+    margin-top: 0;
+  }
+  :last-child {
+    margin-bottom: 0;
+  }
+}
+.block:hover {
+    -webkit-box-shadow: 12px 12px 20px 0px rgba(50, 50, 50, 0.23);
+    -moz-box-shadow:    12px 12px 20px 0px rgba(50, 50, 50, 0.23);
+    box-shadow:         12px 12px 20px 0px rgba(50, 50, 50, 0.23);
+}
+@media (max-width: 800px) {
+  .block {
+    margin-right: 0;
+    width: 100%;
+    max-width: 100%;
+  }
+}
+//Blocks usually have a width of 340 px to prevent it from extending past the screen I remove most of the padding to make sure it works on an iPhone 5
+@media (max-width: 340px) {
+  .block {
+    padding: 20px 10px;
+    border-radius: 2px;
+  }
+}
+//explanation images
+.template_img {
+  max-width: 100%;
+  height: auto;
+  -webkit-box-shadow: 3px 5px 18px 0 rgba(0, 0, 0, 0.14);
+  -moz-box-shadow: 3px 5px 18px 0 rgba(0, 0, 0, 0.14);
+  box-shadow: 3px 5px 18px 0 rgba(0, 0, 0, 0.14);
+}
+footer {
+  margin-top: 15px;
+  padding-top: 30px;
+  background: $nav_colour;
+  font-size: large;
+  ul {
+    padding-left: 20px;
+  }
+}
