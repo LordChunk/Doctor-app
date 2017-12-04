@@ -125,40 +125,40 @@ nav {
 /*Navigation bar */
 .desktop-nav{
   ul {
-	list-style-type: none;
-	margin: 0;
-	padding: 0;
-	overflow: hidden;
-	background-color: $nav_colour;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: $nav_colour;
   }
   li {
-	float: right;
-	line-height: 1.5;
-	vertical-align: middle;
+    float: right;
+    line-height: 1.5;
+    vertical-align: middle;
   }
 
   /*Vertically align Google logos*/
   li i {
-	float: left;
-	margin-right: 5px;
-	line-height: 1.5;
-	vertical-align: middle;
+    float: left;
+    margin-right: 5px;
+    line-height: 1.5;
+    vertical-align: middle;
   }
   a {
-	display: block;
-	text-align: center;
-	padding: 14px 15px;
-	text-decoration: none;
+    display: block;
+    text-align: center;
+    padding: 14px 15px;
+    text-decoration: none;
 	/* Hover animation */
-	transition: background-color .3s;
-	transition-property: background-color;
-	transition-duration: 0.3s;
+    transition: background-color .3s;
+    transition-property: background-color;
+    transition-duration: 0.3s;
   }
   a:hover {
-	background-color: $nav_colour_focus;
+	  background-color: $nav_colour_focus;
   }
   .left {
-	float: left;
+	  float: left;
   }
 }
 //Stop desktop-nav
@@ -175,26 +175,29 @@ nav {
 }
 
 #mobile-nav {
+  * {
+    z-index: 1;
+  }
   ul {
-	list-style-type: none;
-	margin: 0;
-	padding: 0;
-	background-color: $nav_colour;
-	width: 25vw;
-	/*rens' shit*/
-	position: absolute;
-	min-width: 279.719px;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    background-color: $nav_colour;
+    width: 25vw;
+    /*rens' shit*/
+    position: absolute;
+    min-width: 279.719px;
   }
   li a {
-	display: block;
-	padding: 16.5px 15px;
-	/* Hover animation */
-	transition: background-color .3s;
-	transition-property: background-color;
-	transition-duration: 0.3s;
+    display: block;
+    padding: 16.5px 15px;
+    /* Hover animation */
+    transition: background-color .3s;
+    transition-property: background-color;
+    transition-duration: 0.3s;
   }
   a:hover {
-	background-color: $nav_colour_focus;
+	  background-color: $nav_colour_focus;
   }
 }
 //Make close icon stand out more
