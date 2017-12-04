@@ -71,7 +71,7 @@ $(document).ready(function () {
     //Set the side nav right above the screen on load
     //Somehow this doesn't always work, not quite sure why
     var $navHeight =  $('#side-nav').height();
-    $("#side-nav").css("top", $('header').height() - $('nav').height()); //This loads the nav underneath the landing page right above the nav bar
+    $("#side-nav").css("top", $('header').height() - $('nav').height()).css("height", 0).css( "overflow", "hidden"); //This loads the nav underneath the landing page right above the nav bar
 
     //Navbar animation
     //Navbar now also closes when clicking any other item withing the nav bar
