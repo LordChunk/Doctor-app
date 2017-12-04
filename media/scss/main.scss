@@ -182,7 +182,7 @@ nav {
     list-style-type: none;
     margin: 0;
     padding: 0;
-    background-color: $nav_colour;
+    background-color: $nav_mobile_colour;
     width: 25vw;
     /*rens' shit*/
     position: absolute;
@@ -197,7 +197,7 @@ nav {
     transition-duration: 0.3s;
   }
   a:hover {
-	  background-color: $nav_colour_focus;
+	  background-color: $nav_mobile_colour_focus;
   }
 }
 //Make close icon stand out more
