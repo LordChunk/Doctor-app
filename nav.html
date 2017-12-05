@@ -7,11 +7,37 @@
     <link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,500">
     <link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="/media/css/nav.css">
+
+    <!--Import jQuery before js with jQuery files-->
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    
+    <script src="/media/js/main.js"></script>
     <title>Document</title>
 </head>
 <body>
     <nav>
-        <ul>
+        <div class="mobile" id="mobile-nav">
+            <!--Hidden mobile nav -->
+            <ul id="side-nav">
+                <!-- Home button -->
+                <li>
+                    <a href="/">Home</a>
+                </li>
+                <li>
+                    <a href="//www.vanooik.com">
+                        Vanooik.com                    
+                    </a>
+                </li>				
+                <!-- Close nav button -->
+                <li>
+                    <a id="close_mobile_nav">
+                        <i class="material-icons">close</i>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <!-- Standard navigation bar -->
+        <ul id="desktop_nav">
             <li class="nav_trigger">
                 <a id="open_mobile_nav">
                     <i class="material-icons mobile">menu</i>
@@ -22,9 +48,9 @@
                 <span>Doctor App</span>
             </li>
             <li class="spacer"></li>
-            <li><a href="#2">Item 2</a></li>
-            <li><a href="#3">Item 3</a></li>
-            <li><a href="#4">Item 4</a></li>
+            <li class="desktop"><a href="#2">Item 2</a></li>
+            <li class="desktop"><a href="#3">Item 3</a></li>
+            <li class="desktop"><a href="#4">Item 4</a></li>
         </ul>
     </nav>
 </body>

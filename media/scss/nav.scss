@@ -1,10 +1,20 @@
+@import "colour";
 body {
     margin: 0;
     font-family: 'Open Sans', sans-serif;
 }
 nav {
-    ul {
+    //Set text colour for icons and material icons
+    color: $text_colour;
+    .material-icons {
+        color: $text_colour;        
+    }
+    #desktop_nav {
         height: 3em;
+        //Display mobile nav over navbar
+        z-index: 10;
+    }
+    ul {
         position: relative;
         list-style: none;
         padding: 0;
@@ -12,26 +22,44 @@ nav {
         display: flex;
 
         * {
+            //Use flex and center items in all containers
             display: flex;
             align-items: center;
             justify-content: center;
-            background: green; 
+            background: $nav_colour; 
         }
-        
+        //Style nav header
+        .nav_header {
+            padding-left: .5em;
+        }
+        //Space items on desktop
         li {
             display: flex;
             > * {
                 padding: 0 1vw;
             }
         }
+        //Devider bar
         .nav_trigger {
+            border-right: solid $text_colour 2px;
+        }
+        //Hide mobile nav on desktop
+        #open_mobile_nav {
             display: none;
+            //Make link fill entire link cube
+            > a {
+                padding: 0;
+                width: 100%;
+                height: 100%;
+            }
         }
         @media (max-width: 800px) {
-            .nav_trigger {
+            #open_mobile_nav {
                 display: flex;
                 width: 3em;
-                border-right: solid black 2px;
+            }
+            .desktop {
+                display: none;
             }
         }
         .spacer {
@@ -44,6 +72,31 @@ nav {
     }
     a {
         text-decoration: none;
-        color: black;
+        color: $text_colour;    
+    }
+    .mobile {
+        ul {
+            background-color: $nav_mobile_colour; 
+            min-width: 250px;
+            flex-direction: column;
+            position: absolute;
+            //overflow: hidden;
+            //Display mobile nav over desktop nav
+            z-index: 20;
+        }
+        a {
+            //Make link use all of the list item
+            width: 100%;
+            height: 100%;
+            height: 2em;
+            //Use whitespace
+            padding: 0.5em 1em;
+            //Align right
+            justify-content: flex-start;
+        }
+        #close_mobile_nav {
+            //Align left
+            justify-content: flex-end;
+        }
     }
 }
