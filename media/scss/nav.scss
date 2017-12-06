@@ -4,6 +4,11 @@ body {
     font-family: 'Open Sans', sans-serif;
 }
 nav {
+    //Set shadow
+    //Shadow for nav bar
+    -webkit-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14);
+    -moz-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14);
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14);
     //Set text colour for icons and material icons
     color: $text_colour;
     .material-icons {
@@ -14,46 +19,53 @@ nav {
         //Display mobile nav over navbar
         z-index: 10;
     }
+    
     ul {
         position: relative;
         list-style: none;
         padding: 0;
         margin: 0;
         display: flex;
+        background: $nav_colour; 
 
         * {
             //Use flex and center items in all containers
             display: flex;
             align-items: center;
             justify-content: center;
-            background: $nav_colour; 
         }
-        //Style nav header
-        .nav_header {
-            padding-left: .5em;
+        //Let links occupy all of the list space
+        a {
+            width: 100%;
+            height: 100%;
+            
+            /* Hover animation */
+            transition: background-color .3s;
+            transition-property: background-color;
+            transition-duration: 0.3s;
         }
+        //Style nav header 
+        //Whitespace between logo and title
+        .nav_header img {
+            margin: 0 .5em;
+        }
+    
         //Space items on desktop
         li {
             display: flex;
-            > * {
-                padding: 0 1vw;
-            }
         }
-        //Devider bar
-        .nav_trigger {
-            border-right: solid $text_colour 2px;
+        li:hover:not(.spacer) a {
+            background-color: $nav_mobile_colour_focus;
         }
         //Hide mobile nav on desktop
         #open_mobile_nav {
             display: none;
             //Make link fill entire link cube
-            > a {
-                padding: 0;
-                width: 100%;
-                height: 100%;
-            }
         }
         @media (max-width: 800px) {
+            .nav_trigger {
+                border-right: solid $text_colour 2px;
+            }
             #open_mobile_nav {
                 display: flex;
                 width: 3em;

@@ -6,7 +6,8 @@ $(document).ready(function () {
 
     //Navbar animation
     //Navbar now also closes when clicking any other item withing the nav bar
-    $('body').on('click', '#close_mobile_nav, #side-nav *', function (){
+    $('body').on('click', '#close_mobile_nav, #side-nav *', function (event){
+        event.preventDefault();        
         $('#side-nav').animate({"height": 0}, "slow"); 
         //This moves the nav bar above the nav bar + landing page height
     });
@@ -24,4 +25,4 @@ $(document).ready(function () {
         //Make logo element clickable as home button for desktop version
         $("#open_mobile_nav").attr("href", "/");
     }
-}
+});
