@@ -1,8 +1,10 @@
 $(document).ready(function () {
-    //Set the side nav right above the screen on load
-    //Somehow this doesn't always work, not quite sure why
+    console.log("Nav Loaded");
+    
+    //Register original nav height
     var $navHeight =  $('#side-nav').height();
-    //$("#side-nav").css("top", $('header').height() - $('#desktop_nav').height()).css("height", 0).css( "overflow", "hidden"); //This loads the nav underneath the landing page right above the nav bar
+    //Hide mobile nav
+    $('#side-nav').height(0);
 
     //Navbar animation
     //Navbar now also closes when clicking any other item withing the nav bar
@@ -16,7 +18,8 @@ $(document).ready(function () {
     if (window.innerWidth < 800)
     {
         //Change attribute href and check for click event
-        $('body').on('click', '#open_mobile_nav', function (){
+        $('body').on('click', '#open_mobile_nav', function (event){
+            event.preventDefault();                    
             $('#side-nav').animate({"height": $navHeight}, "slow");
         });
     }

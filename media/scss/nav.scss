@@ -88,6 +88,8 @@ nav {
     }
     .mobile {
         ul {
+            //For good closing and opening animation
+            overflow: hidden;
             background-color: $nav_mobile_colour; 
             min-width: 250px;
             flex-direction: column;
