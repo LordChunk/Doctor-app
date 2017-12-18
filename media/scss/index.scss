@@ -65,4 +65,65 @@
 }
 main {
     height: 100vh;
+}#main {
+    z-index: 200;
+    * {
+        z-index: 200;        
+    }
+}
+#side-nav {
+    z-index: 100;
+}
+
+.landing {
+    //50% background fade
+    background: hsla(163, 45%, 56%, 0.5);
+    padding-top: 5vh;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    height: 100vh;
+    * {
+        color: white;
+        overflow: hidden;
+    }
+    > * {
+        width: 100vw;
+    }
+    p {
+        font-size: 24px;
+    }
+    //Heart svg
+    img {
+        width: 25vw;
+    }
+    h1 {
+        font-size: 90px;
+        margin-top: 0.3em;
+    }
+    i {
+        font-size: 370%;
+        text-shadow: 3px 5px 13px rgba(0,0,0,0.26);
+        margin: 0;
+    }
+    //Heartbeat animation
+    .animated { 
+         animation-duration: 2s; 
+         animation-fill-mode: both; 
+         animation-iteration-count: infinite;
+         overflow: unset;
+    } 
+    @keyframes pulse { 
+        0% { transform: scale(1); } 
+        10% { transform: scale(1.08); } 
+        20% { transform: scale(1); } 
+        30% { transform: scale(1.1); } 
+        40% { transform: scale(1); } 
+    } 
+    .pulse { 
+        animation-name: pulse; 
+    }
+}
+main {
+    height: 100vh;
 }

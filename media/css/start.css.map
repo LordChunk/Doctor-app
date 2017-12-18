@@ -1,8 +1,9 @@
 {
     "version": 3,
-    "mappings": "AAGA,AAAA,CAAC,AAAC,CACE,OAAO,CAAE,CAAC,CACb",
+    "mappings": "AAIA,AAAA,CAAC,AAAC,CACE,OAAO,CAAE,CAAC,CACb,AACD,AAAA,IAAI,AAAC,CACD,gBAAgB,CCMD,OAAO,CDLtB,MAAM,CAAE,CAAC,CACZ,AAED,AAAA,QAAQ,AAAC,CAEL,UAAU,CAAE,oBAAwB,CACpC,KAAK,CCFK,OAAkB,CDG/B",
     "sources": [
-        "../scss/start.scss"
+        "../scss/start.scss",
+        "../scss/colour.scss"
     ],
     "names": [],
     "file": "start.css"

@@ -1,6 +1,17 @@
 //First CSS that is loaded in. Should be a small document that is loaded quickly
-
+//Import colour pallets
+@import "colour";
 //Prevent random text without styling from popping up
 * {
     opacity: 0;
+}
+body {
+    background-color: $background-color;
+    margin: 0;
+}
+
+.landing {
+    //50% background fade
+    background: hsla(163, 45%, 56%, 0.5);
+    color: $text_colour;
 }
