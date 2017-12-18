@@ -2,7 +2,7 @@ console.log("Ajax Page Loader Loaded.");
 
 //Better page loading
 //Select internal links
-$('body').on('click', "a:not([href*='//']):not([href*='#'])", function (event)
+$('body').on('click', "a:not([href*='//'])", function (event)
 {
     console.log("Page loader triggerd");
     //Check for empty URLs (nav trigger buttons etc.)

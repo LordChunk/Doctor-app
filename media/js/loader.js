@@ -3,25 +3,22 @@
 //          CSS
 //Loading css asynchronously
 loadCss("https://fonts.googleapis.com/icon?family=Material+Icons");
-//loadCss("/media/css/main.css");
+loadCss("/media/css/nav.css");
+loadCss("/media/css/main.css");
 loadCss("/media/css/" + requestURI()  + ".css");
 loadCss("https://fonts.googleapis.com/css?family=Open+Sans:300,400,500");
 
 //          JS
 //Loading JS asynchronously
-window.onload = function(){
+$(document).ready(function(){
     //Native JS
-    loadJS("/media/js/src/nav.js");
-    loadJS("/media/js/src/ajaxPageLoader.js");
-    loadJS("/media/js/src/main.js");
+    loadJs("/media/js/src/smoothScroll.js");
+    loadJs("/media/js/src/nav.js");
+    loadJs("/media/js/src/ajaxPageLoader.js");
+    //loadJS("/media/js/src/main.js");
+});
 
-    //Jquery
-    // $.getScript("/media/js/src/ajaxPageLoader.js");
-    // $.getScript("/media/js/src/main.js");
-    // $.getScript("/media/js/src/nav.js");
-};
-
-function loadJS(url){
+function loadJs(url){
     var jsScript = document.createElement("script");
     jsScript.type = "text/javascript";
     jsScript.src = url;
@@ -30,7 +27,7 @@ function loadJS(url){
 
 //$_SERVER['REQUEST_URI'] javascript alternative
 function requestURI() {
-    var uri = location.pathname.substr(1).split('/');
+    var uri = location.pathname.substr(1).split("/");
     if(0 in uri && uri[0] != "") {
         var page = uri[0];
     } else {

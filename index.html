@@ -15,9 +15,6 @@
     <!--Minimal CSS -->
     <link rel="stylesheet" type="text/css" href="/media/css/start.css" />
 
-    <!-- Load css asynchronously -->
-    <script async src="/media/js/css.js" type="text/javascript" ></script>
-
     <!--Import jQuery before js with jQuery files-->
     <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
 
@@ -43,7 +40,6 @@
 		</a>
 		<!--Navigation bar -->
 		<nav id="main">
-			<!-- Mobile nav -->
 			<div class="mobile" id="mobile-nav">
 				<!--Hidden mobile nav -->
 				<ul id="side-nav">
@@ -58,36 +54,29 @@
 					</li>				
 					<!-- Close nav button -->
 					<li>
-						<a id="close_mobile_nav" class="nav_trigger">
+						<a id="close_mobile_nav" href="#">
 							<i class="material-icons">close</i>
 						</a>
 					</li>
 				</ul>
 			</div>
-			<!--desktop nav -->
-			<div class="desktop-nav">
-				<ul>
-					<li class="left" id="title">
-						<a id="open_mobile_nav">
-							<img alt="logo" id="logo" src="/media/images/logo_white.svg"/>
-							<i class="material-icons mobile">menu</i>
-							Doctor App                
-						</a>
-					</li>
-					<!--Normal nav bar -->
-					<li class="desktop">
-						<a href="/">
-							Home
-						</a>
-					</li>
-					<li class="desktop">
-						<a href="//www.vanooik.com">
-							Vanooik.com
-						</a>
-					</li>
-				</ul>
-			</div>
-		</nav>				
+			<!-- Standard navigation bar -->
+			<ul id="desktop_nav">
+				<li class="nav_trigger">
+					<a id="open_mobile_nav" href="#">
+						<i class="material-icons mobile">menu</i>
+					</a>
+				</li>
+				<li class="nav_header">
+					<img alt="logo" id="logo" src="/media/images/logo_white.svg"/>
+					<span>Doctor App</span>
+				</li>
+				<li class="spacer"></li>
+				<li class="desktop"><a href="#2">Item 2</a></li>
+				<li class="desktop"><a href="#3">Item 3</a></li>
+				<li class="desktop"><a href="#4">Item 4</a></li>
+			</ul>
+		</nav>		
 	</header>
 	<main>
 		<div class="container">
