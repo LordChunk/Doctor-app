@@ -3,6 +3,9 @@ body {
     margin: 0;
     font-family: 'Open Sans', sans-serif;
 }
+//
+$nav_padding_desktop: 0 .5em;
+
 nav {
     //Set shadow
     //Shadow for nav bar
@@ -46,8 +49,8 @@ nav {
         }
         //Style nav header 
         //Whitespace between logo and title
-        .nav_header img {
-            margin: 0 .5em;
+        .nav_header a {
+            padding: $nav_padding;
         }
     
         //Space items on desktop
@@ -111,6 +114,11 @@ nav {
         #close_mobile_nav {
             //Align left
             justify-content: flex-end;
+        }
+    }
+    .desktop {
+        a {
+            padding: $nav_padding;
         }
     }
 }

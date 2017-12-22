@@ -27,13 +27,25 @@ function loadJs(url){
 
 //$_SERVER['REQUEST_URI'] javascript alternative
 function requestURI() {
-    var uri = location.pathname.substr(1).split("/");
-    if(0 in uri && uri[0] != "") {
-        var page = uri[0];
-    } else {
-        var page = "index";
+    var uri = location.pathname.substr(1).split("/")[0].replace(".html", "");
+
+    //Replaced by using replace .html at the end of split("/")
+    // console.log(uri);
+
+    // if(0 in uri && uri[0] != "") {
+    //     var page = uri[0];
+    // } else {
+    //     var page = "index";
+    // }
+    //return page;
+
+    //New version
+    if(uri === "")
+    {
+        uri = "index";
     }
-    return page;
+
+    return uri;
 }
 
 function loadCss(url) {
