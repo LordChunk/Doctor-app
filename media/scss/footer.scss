@@ -1,0 +1,15 @@
+@import "colour";
+footer {
+    margin-top: 15px;
+    background: $nav_colour;
+    font-size: large;
+
+    ul {
+      padding-left: 20px;
+    }
+
+    a {
+        font-weight: inherit;
+        color: $link_colour_footer;
+    }
+}

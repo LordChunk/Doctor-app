@@ -265,6 +265,14 @@ main {
     border-radius: 2px;
   }
 }
+//Remove block styling
+.no_block {
+  background: unset;
+  box-shadow: unset;
+}
+.no_block:hover {
+  box-shadow: unset;
+}
 //explanation images
 .template_img {
   max-width: 100%;
@@ -272,13 +280,4 @@ main {
   -webkit-box-shadow: 3px 5px 18px 0 rgba(0, 0, 0, 0.14);
   -moz-box-shadow: 3px 5px 18px 0 rgba(0, 0, 0, 0.14);
   box-shadow: 3px 5px 18px 0 rgba(0, 0, 0, 0.14);
-}
-footer {
-  margin-top: 15px;
-  padding-top: 30px;
-  background: $nav_colour;
-  font-size: large;
-  ul {
-    padding-left: 20px;
-  }
 }

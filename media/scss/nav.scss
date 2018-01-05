@@ -3,7 +3,7 @@ body {
     margin: 0;
     font-family: 'Open Sans', sans-serif;
 }
-//
+
 $nav_padding_desktop: 0 .5em;
 
 nav {
@@ -14,9 +14,11 @@ nav {
     box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14);
     //Set text colour for icons and material icons
     color: $text_colour;
+
     .material-icons {
         color: $text_colour;        
     }
+
     #desktop_nav {
         height: 3em;
         //Display mobile nav over navbar
@@ -37,6 +39,7 @@ nav {
             align-items: center;
             justify-content: center;
         }
+
         //Let links occupy all of the list space
         a {
             width: 100%;
@@ -47,48 +50,65 @@ nav {
             transition-property: background-color;
             transition-duration: 0.3s;
         }
+
         //Style nav header 
         //Whitespace between logo and title
-        .nav_header a {
-            padding: $nav_padding;
+        .nav_header {
+            a {
+                padding: $nav_padding;
+            }
+        
+            //Space icon and title
+            b {
+                padding-left: 10px;
+            }
         }
     
         //Space items on desktop
         li {
             display: flex;
         }
+
         li:hover:not(.spacer) a {
             background-color: $nav_mobile_colour_focus;
         }
+
         //Hide mobile nav on desktop
         #open_mobile_nav {
             display: none;
             //Make link fill entire link cube
         }
+
         @media (max-width: 800px) {
             .nav_trigger {
                 border-right: solid $text_colour 2px;
             }
+
             #open_mobile_nav {
                 display: flex;
                 width: 3em;
             }
+            
             .desktop {
                 display: none;
             }
         }
+
         .spacer {
             flex-grow: 2;
         }
+
         #logo {
             height: 1em;
             width: auto;
         }
     }
+
     a {
         text-decoration: none;
         color: $text_colour;    
     }
+
     .mobile {
         ul {
             //For good closing and opening animation
@@ -101,6 +121,7 @@ nav {
             //Display mobile nav over desktop nav
             z-index: 20;
         }
+
         a {
             //Make link use all of the list item
             width: 100%;
@@ -111,6 +132,7 @@ nav {
             //Align right
             justify-content: flex-start;
         }
+        
         #close_mobile_nav {
             //Align left
             justify-content: flex-end;

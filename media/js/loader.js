@@ -4,6 +4,7 @@
 //Loading css asynchronously
 loadCss("https://fonts.googleapis.com/icon?family=Material+Icons");
 loadCss("/media/css/nav.css");
+loadCss("/media/css/footer.css");
 loadCss("/media/css/main.css");
 loadCss("/media/css/" + requestURI()  + ".css");
 loadCss("https://fonts.googleapis.com/css?family=Open+Sans:300,400,500");
